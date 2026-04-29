@@ -1,2 +1,2 @@
 # balu-devops-portfolio
-This repo is for devops portfolio project.
+This repo is for devops portfolio.
