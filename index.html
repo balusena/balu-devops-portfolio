@@ -192,5 +192,31 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
+    <script>
+        // Disable Right-Click Context Menu
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Disable Common Developer Tool Keyboard Shortcuts
+        document.addEventListener('keydown', function(event) {
+            // Block F12
+            if (event.key === 'F12') {
+                event.preventDefault();
+                return false;
+            }
+            
+            // Block Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U (View Source)
+            if (event.ctrlKey && (event.shiftKey && (event.key === 'I' || event.key === 'i' || event.key === 'J' || event.key === 'j') || (event.key === 'U' || event.key === 'u'))) {
+                event.preventDefault();
+                return false;
+            }
+
+            // Block Mac equivalents (Cmd+Opt+I, Cmd+Opt+J, Cmd+U)
+            if (event.metaKey && (event.altKey && (event.key === 'I' || event.key === 'i' || event.key === 'J' || event.key === 'j') || (event.key === 'U' || event.key === 'u'))) {
+                event.preventDefault();
+                return false;
+            }
+        });
+    </script>
+
 </body>
 </html>
